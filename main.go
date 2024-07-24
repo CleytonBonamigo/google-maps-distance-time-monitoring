@@ -81,5 +81,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("Response: %v", resp)
+	fmt.Printf("Response: %v\n", resp.Routes[0])
+	fmt.Printf("Distance: %v\n", resp.Routes[0].GetDistanceMeters())
+	fmt.Printf("Duration: %v\n", resp.Routes[0].Duration.GetSeconds())
+	fmt.Printf("Polyline: %v\n", resp.Routes[0].Polyline.GetEncodedPolyline())
 }
